@@ -1,0 +1,43 @@
+{
+  "name": "peseljs",
+  "version": "0.1.0",
+  "description": "Library to validation PESEL",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "tsc",
+    "test": "karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaroslawkrol/peseljs.git"
+  },
+  "keywords": [
+    "pesel",
+    "nip",
+    "regon",
+    "polish",
+    "identification",
+    "number",
+    "javascript"
+  ],
+  "author": "Jaroslaw Krol <jaroslawkrol11@gmail.com> (https://github.com/jaroslawkrol)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaroslawkrol/peseljs/issues"
+  },
+  "homepage": "https://github.com/jaroslawkrol/peseljs#readme",
+  "devDependencies": {
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "typescript": "^2.5.3"
+  }
+}
