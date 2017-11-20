@@ -1,5 +1,4 @@
-import {IncorrectPeselError} from "./incorrect-pesel-error";
-import {convertToArray, convertToDateArray, isValidPeselChecksum, isValidPeselStructure} from "./utils";
+import * as peselManager from './pesel';
 
 /**
  * Returns information if PESEL number is valid.
@@ -7,10 +6,8 @@ import {convertToArray, convertToDateArray, isValidPeselChecksum, isValidPeselSt
  * @param {string} pesel
  * @returns {boolean}
  */
-export const isCorrectPesel = (pesel: string): boolean => {
-    if(!pesel) return false;
-    if(!isValidPeselStructure(pesel)) return false;
-    return isValidPeselChecksum(pesel);
+export const isValidPesel = (pesel: string): boolean => {
+    return peselManager.isValid(pesel);
 };
 
 /**
@@ -20,12 +17,8 @@ export const isCorrectPesel = (pesel: string): boolean => {
  * @returns {boolean} - false: male; true: female
  * @throws #IncorrectPeselError if PESEL is incorrect
  */
-export const getSexFromPesel = (pesel: string): boolean => {
-    if(!isCorrectPesel(pesel)) {
-        throw new IncorrectPeselError();
-    }
-    const array = convertToArray(pesel);
-    return array[9] % 2 === 0;
+export const getGenderFromPesel = (pesel: string): boolean => {
+    return peselManager.getGender(pesel);
 };
 
 /**
@@ -36,13 +29,5 @@ export const getSexFromPesel = (pesel: string): boolean => {
  * @throws #IncorrectPeselError if PESEL is incorrect
  */
 export const getDateOfBirthFromPesel = (pesel: string): number => {
-    if(!isCorrectPesel(pesel)) {
-        throw new IncorrectPeselError();
-    }
-    try {
-        const array = convertToDateArray(pesel);
-        return new Date(...array).getTime();
-    } catch (e) {
-        throw new IncorrectPeselError(e.message);
-    }
+    return peselManager.getDateOfBirth(pesel);
 };

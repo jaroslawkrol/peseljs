@@ -1,17 +1,28 @@
-export class Pesel {
+import {IncorrectPeselError} from "./incorrect-pesel-error";
+import {convertToArray, convertToDateArray, isValidPeselChecksum, isValidPeselStructure} from "./utils";
 
-    _pesel: string;
+export const isValid = (pesel: string): boolean => {
+    if(!pesel) return false;
+    if(!isValidPeselStructure(pesel)) return false;
+    return isValidPeselChecksum(pesel);
+};
 
-    constructor(pesel: string) {
-        this.pesel = pesel;
+export const getGender = (pesel: string): boolean => {
+    if(!isValid(pesel)) {
+        throw new IncorrectPeselError();
     }
+    const array = convertToArray(pesel);
+    return array[9] % 2 === 0;
+};
 
-    get pesel(): string {
-        return this._pesel;
+export const getDateOfBirth = (pesel: string): number => {
+    if(!isValid(pesel)) {
+        throw new IncorrectPeselError();
     }
-
-    set pesel(pesel: string) {
-        this._pesel = pesel;
+    try {
+        const array = convertToDateArray(pesel);
+        return new Date(...array).getTime();
+    } catch (e) {
+        throw new IncorrectPeselError(e.message);
     }
-    
-}
+};
