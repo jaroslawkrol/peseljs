@@ -52,7 +52,7 @@ describe('Getting information (sex) from PESEL', () => {
     });
 
     it('should throw error because wrong PESEL checksum', () => {
-        const pesel: string = '5703DDD4932';
+        const pesel: string = '28072006691';
         const fun = () => {
             return getSexFromPesel(pesel)
         }
@@ -64,8 +64,8 @@ describe('Getting information (sex) from PESEL', () => {
 describe('Getting information (date of birth) from PESEL', () => {
 
     it('should return date of birth of the person having the pesel', () => {
-        const pesel: string = '72020518045';
-        expect(getDateOfBirthFromPesel(pesel)).toEqual(608248800000);
+        const pesel: string = '83040908183';
+        expect(getDateOfBirthFromPesel(pesel)).toEqual(418687200000);
     });
 
     it('should return date of birth (before 1970) of the person having the pesel', () => {
