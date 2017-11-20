@@ -65,19 +65,19 @@ describe('Getting information (date of birth) from PESEL', () => {
 
     it('should return date of birth of the person having the pesel', () => {
         const pesel: string = '83040908183';
-        const unixTime: number = 418687200000;
+        const unixTime: number = new Date(1983, 3, 9).getTime();
         expect(getDateOfBirth(pesel)).toEqual(unixTime);
     });
 
     it('should return date of birth (before 1970) of the person having the pesel', () => {
         const pesel: string = '37061907858';
-        const unixTime: number = -1026784800000;
+        const unixTime: number = new Date(1937, 5, 19).getTime();
         expect(getDateOfBirth(pesel)).toEqual(unixTime);
     });
 
     it('should return date of birth (after 1999) of the person having the pesel', () => {
         const pesel: string = '07280401040';
-        const unixTime: number = 1186178400000;
+        const unixTime: number = new Date(2007, 7, 4).getTime();
         expect(getDateOfBirth(pesel)).toEqual(unixTime);
     });
 
