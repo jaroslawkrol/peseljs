@@ -41,6 +41,8 @@
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-typescript": "^3.0.8",
-    "typescript": "^2.5.3"
+    "ts-loader": "^3.1.1",
+    "typescript": "^2.5.3",
+    "webpack": "^3.8.1"
   }
 }
