@@ -2,8 +2,8 @@
   "name": "peseljs",
   "version": "0.2.0",
   "description": "Library to validation PESEL",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/lib/index.js",
+  "types": "./dist/lib/index.d.ts",
   "engines": {
     "node": ">=4.2.4"
   },
