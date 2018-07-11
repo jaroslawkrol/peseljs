@@ -1,5 +1,5 @@
 import {IncorrectPeselError} from "./incorrect-pesel-error";
-import {convertToArray, convertToDateArray, isValidPeselChecksum, isValidPeselStructure} from "./utils";
+import {convertToArray, convertToDateArray, isValidChecksum, isValidStructure, TypeConstants} from './utils';
 
 export const isValid = (pesel: string): boolean => {
     if(!pesel) return false;
@@ -25,4 +25,12 @@ export const getDateOfBirth = (pesel: string): number => {
     } catch (e) {
         throw new IncorrectPeselError(e.message);
     }
+};
+
+const isValidPeselStructure = (pesel: string): boolean => {
+    return isValidStructure(pesel, TypeConstants.PESEL);
+};
+
+const isValidPeselChecksum = (pesel: string): boolean => {
+    return isValidChecksum(pesel, TypeConstants.PESEL);
 };
