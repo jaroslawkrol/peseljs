@@ -10,6 +10,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "tsc",
+    "webpack": "node_modules/.bin/webpack --config webpack.config.js",
     "test": "karma start karma.conf.js"
   },
   "repository": {

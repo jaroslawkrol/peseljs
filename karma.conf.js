@@ -16,6 +16,11 @@ module.exports = function (config) {
         // list of files / patterns to load in the browser
         files: [
             'lib/*.ts',
+            'lib/services/*.ts',
+            'lib/errors/*.ts',
+            'lib/utils/*.ts',
+            'lib/constants/*.ts',
+            'lib/enums/*.ts',
             'spec/*.ts'
         ],
 

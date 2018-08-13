@@ -13,7 +13,7 @@ module.exports = {
         extensions: [".ts", ".js"]
     },
     module: {
-        loaders: [{ test: /\.ts$/, loader: "ts-loader", exclude: /node_modules/ }]
+        loaders: [{ test: /\.ts$/, loader: "ts-loader", exclude: ["/node_modules/", "/spec/"] }]
     },
     plugins: [
         new UglifyJSPlugin()

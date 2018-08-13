@@ -1,4 +1,5 @@
-import {isValidChecksum, isValidStructure, TypeConstants} from './utils';
+import * as ValidationUtils from '../utils/validation.utils';
+import {IdentifierType} from '../enums/identifier-type.enum';
 
 export const isValid = (nip: string): boolean => {
     if(!nip) return false;
@@ -7,9 +8,9 @@ export const isValid = (nip: string): boolean => {
 };
 
 const isValidNipStructure = (nip: string): boolean => {
-    return isValidStructure(nip, TypeConstants.NIP);
+    return ValidationUtils.isValidStructure(nip, IdentifierType.NIP);
 };
 
 const isValidNipChecksum = (nip: string): boolean => {
-    return isValidChecksum(nip, TypeConstants.NIP);
+    return ValidationUtils.isValidChecksum(nip, IdentifierType.NIP);
 };

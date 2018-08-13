@@ -8,5 +8,9 @@
     "module": "commonjs",
     "outDir": "./dist",
     "strict": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }
