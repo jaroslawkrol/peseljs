@@ -1,3 +1,4 @@
+// @dynamic
 export class RegexpConst {
 
     private static readonly values: {[key: string]: RegExp} = {

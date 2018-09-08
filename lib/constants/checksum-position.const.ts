@@ -1,3 +1,4 @@
+// @dynamic
 export class ChecksumPositionConst {
 
     private static readonly values: {[key: string]: number} = {

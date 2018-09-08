@@ -1,3 +1,4 @@
+// @dynamic
 export class CheckConst {
 
     private static readonly values: {[key: string]: Function} = {

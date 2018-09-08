@@ -1,3 +1,4 @@
+// @dynamic
 export class WeightConst {
 
     private static readonly values: { [key: string]: number[] } = {

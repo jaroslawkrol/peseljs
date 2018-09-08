@@ -1,3 +1,4 @@
+// @dynamic
 export class LengthConst {
 
     private static readonly values: {[key: string]: number} = {
