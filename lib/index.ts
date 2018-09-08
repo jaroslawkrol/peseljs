@@ -31,7 +31,7 @@ export const getGenderFromPesel = (pesel: string): boolean => {
  * @returns {number} date in UNIX time
  * @throws #IncorrectPeselError if PESEL is incorrect
  */
-export const getDateOfBirthFromPesel = (pesel: string): number => {
+export const getDateOfBirthFromPesel = (pesel: string): number | null => {
     return peselService.getDateOfBirth(pesel);
 };
 

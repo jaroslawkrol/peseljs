@@ -17,11 +17,14 @@ export const getGender = (pesel: string, noCheck?: boolean): boolean => {
     return array[9] % 2 === 0;
 };
 
-export const getDateOfBirth = (pesel: string, noCheck?: boolean): number => {
+export const getDateOfBirth = (pesel: string, noCheck?: boolean): number | null => {
     if (!noCheck && !isValid(pesel)) {
         throw new IncorrectPeselError();
     }
     try {
+        if (!pesel) {
+            return null;
+        }
         const array = ConversionUtils.convertToDateArray(pesel);
         return new Date(...array).getTime();
     } catch (e) {

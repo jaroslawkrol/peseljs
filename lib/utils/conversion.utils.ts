@@ -5,7 +5,8 @@ export const convertToArray = (value: string): number[] => {
 };
 
 // TODO: to separate peselUtil
-export const convertToDateArray = (pesel: string): number[] => {
+export const convertToDateArray = (pesel?: string): number[] => {
+    if (!pesel) { return [0, 0, 0]; }
     const array = [Number(pesel.slice(0, 2)), Number(pesel.slice(2, 4)), Number(pesel.slice(4, 6))];
     switch (true) {
         case (array[1] <= 12):
