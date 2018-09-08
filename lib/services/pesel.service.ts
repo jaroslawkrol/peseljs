@@ -26,7 +26,7 @@ export const getDateOfBirth = (pesel: string, noCheck?: boolean): number | null 
             return null;
         }
         const array = ConversionUtils.convertToDateArray(pesel);
-        return new Date(...array).getTime();
+        return new Date(array[0], array[1], array[2]).getTime();
     } catch (e) {
         throw new IncorrectPeselError(e.message);
     }
