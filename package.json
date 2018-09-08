@@ -1,6 +1,6 @@
 {
   "name": "peseljs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Library to validation PESEL",
   "main": "./dist/lib/index.js",
   "types": "./dist/lib/index.d.ts",
